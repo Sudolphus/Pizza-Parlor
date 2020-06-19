@@ -13,6 +13,7 @@ Order.prototype.assignID = function() {
 Order.prototype.addPizza = function(pizza) {
   pizza.ID = this.assignID();
   this.pizzas.push(pizza);
+  this.totalPrice += pizza.calculatePrice();
 }
 
 function Pizza(size) {
@@ -79,9 +80,23 @@ function collectToppings() {
   displayPizza();
 }
 
+function resetPizza() {
+  $("#pizzaOutput").empty();
+    pizza = new Pizza();
+    $("input:checkbox[name=topping]").each(function() {
+      $(this).prop('checked', false);
+    })
+    $("#toppings").hide();
+}
+
 function attachPizzaButtons() {
-  $("#pizzaOutput").on("click", "#confirmPizza", function() {
-    
+  const pizzaOutput = $("#pizzaOutput");
+  pizzaOutput.on("click", "#confirmPizza", function() {
+    order.addPizza(pizza);
+    resetPizza();
+  })
+  pizzaOutput.on("click", "#deletePizza", function() {
+    resetPizza();
   })
 }
 
