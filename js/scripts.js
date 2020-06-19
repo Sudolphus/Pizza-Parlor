@@ -28,3 +28,27 @@ Pizza.prototype.calculatePrice = function() {
 }
 
 //ui
+let pizza = new Pizza();
+
+function newPizza(size) {
+  pizza = new Pizza(size);
+  $('#toppings').show();
+}
+
+$(document).ready(function() {
+  $("#small").click(function(event) {
+    event.preventDefault();
+    newPizza('small');
+  })
+  $("#medium").click(function(event) {
+    event.preventDefault();
+    newPizza('medium');
+  })
+  $("#large").click(function(event) {
+    event.preventDefault();
+    newPizza('large');
+  })
+  $("#submit").click(function(event) {
+    event.preventDefault();
+  })
+})

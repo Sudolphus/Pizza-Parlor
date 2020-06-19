@@ -1,3 +1,7 @@
 .toppingsList {
   list-style-type: none;
 }
+
+#toppings {
+  display: none;
+}
