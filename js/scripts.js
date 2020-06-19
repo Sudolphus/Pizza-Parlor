@@ -2,6 +2,17 @@
 function Order() {
   this.totalPrice = 0;
   this.pizzas = [];
+  this.nextID = 0;
+}
+
+Order.prototype.assignID = function() {
+  this.nextID += 1;
+  return this.nextID;
+}
+
+Order.prototype.addPizza = function(pizza) {
+  pizza.ID = this.assignID();
+  this.pizzas.push(pizza);
 }
 
 function Pizza(size) {
@@ -35,6 +46,7 @@ Pizza.prototype.calculatePrice = function() {
 }
 
 //ui
+let order = new Order();
 let pizza;
 
 function newPizza(size) {
@@ -51,6 +63,8 @@ function displayPizza() {
     pizzaHTML += `<li><em>${topping}</em></li>`;
   }
   pizzaHTML += `</ul><p><strong>Price: $${price}</strong></p>`;
+  pizzaHTML += `<button class="btn btn-info" id="confirmPizza">Add Pizza To Order</button>`
+  pizzaHTML += `<button class="btn btn-warning" id="deletePizza">Discard Pizza</button>`
   pizzaOutput.append(pizzaHTML);
 }
 
@@ -65,7 +79,14 @@ function collectToppings() {
   displayPizza();
 }
 
+function attachPizzaButtons() {
+  $("#pizzaOutput").on("click", "#confirmPizza", function() {
+    
+  })
+}
+
 $(document).ready(function() {
+  attachPizzaButtons();
   $("#small").click(function(event) {
     event.preventDefault();
     newPizza('Small');

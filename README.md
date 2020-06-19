@@ -15,8 +15,11 @@ _An app for the ordering of pizza. Demonstrates object-oriented javascript by al
 | **Program can gather user inputs** | User input: Clicks 'small', 'pepperoni' | Output: size = 'small', toppings = 'pepperoni' |
 | **Program creates a 'Pizza' object with size** | User input: Clicks "New Pizza" | Output: Pizza = {size = 'small'} |
 | **User can add Toppings to the Pizza** | User input: Checks 'Pepperoni' | Output: Pizza = {size = 'small', toppings: [Pepperoni]} |
-| **Program can calculate price when Pizza is confirmed** | User input: Checks confirm | Output: Pizza = {size = 'small', toppings: [Pepperoni]} => price: 8.25 |
-| **Program shows user their order and their price** | User input: Checks confirm | Output: 'Pizza with pepperoni, price: $8.25' |
+| **Program can calculate price when Pizza is confirmed** | User input: Clicks Add Toppings | Output: Pizza = {size = 'small', toppings: [Pepperoni]} => price: 8.25 |
+| **Program shows user their order and their price** | User input: Clicks Add Toppings | Output: 'Pizza with pepperoni, price: $8.25' |
+| **Program allows user to confirm or delete their pizza** | User input: Clicks Add Toppings | Output: button with confirm or delete appears |
+| **Program assigns unique ID to each pizza if confirmed** | User input: Clicks confirm | Output: Pizza = {size = 'small', toppings: [Pepperoni], ID: 1} |
+| **Program adds Pizza to Order object if confirmed** | User input: Clicks confirm | Output: Order = {pizzas=[{size = 'small', toppings: [Pepperoni], ID: 1}] |
 
 
 ## Setup/Installation Requirements
