@@ -111,14 +111,23 @@ function resetPizza() {
 function addPizzaToOrderDisplay(newPizza) {
   const orderOutput = $("#orderOutput");
   const pizzaHTML = buildPizzaHTML(newPizza);
-  let orderHTML = `<li>${pizzaHTML}</li>`;
-  const price = `$${order.totalPrice.toFixed(2)}`;
+  let orderHTML = `<li id='pizza${newPizza.ID}'>${pizzaHTML}</li>`;
+  orderHTML += `<button class='btn btn-warning deleteFromOrder' id='delete${newPizza.ID}'>Remove This Pizza</button>`;
   orderOutput.append(orderHTML);
-  $("#totalPrice").text(price);
+  $("#totalPrice").text(`$${order.totalPrice.toFixed(2)}`);
+}
+
+function deletePizza(id) {
+  const pizzaToDelete = $(`#orderOutput > li#pizza${id}`);
+  order.deletePizza(id);
+  pizzaToDelete.remove();
+  $(`button#delete${id}`).remove();
+  $("#totalPrice").text(`$${order.totalPrice.toFixed(2)}`);
 }
 
 function attachPizzaButtons() {
   const pizzaOutput = $("#pizzaOutput");
+  const orderOutput = $("#orderOutput");
   pizzaOutput.on("click", "#confirmPizza", function() {
     order.addPizza(pizza);
     addPizzaToOrderDisplay(pizza);
@@ -126,6 +135,9 @@ function attachPizzaButtons() {
   })
   pizzaOutput.on("click", "#deletePizza", function() {
     resetPizza();
+  })
+  orderOutput.on("click", ".deleteFromOrder", function() {
+    deletePizza(parseInt($(this).attr('id').slice(6)));
   })
 }
 
