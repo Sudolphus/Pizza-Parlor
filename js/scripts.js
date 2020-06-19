@@ -1,11 +1,18 @@
 //business
+function Order() {
+  this.totalPrice = 0;
+  this.pizzas = [];
+}
+
 function Pizza(size) {
   this.size = size;
   this.toppings = [];
 }
 
 Pizza.prototype.addToppings = function(topping) {
-  this.toppings.push(topping);
+  if (!this.toppings.includes(topping)) {
+    this.toppings.push(topping);
+  }
 }
 
 Pizza.prototype.calculatePrice = function() {
@@ -37,6 +44,7 @@ function newPizza(size) {
 
 function displayPizza() {
   const pizzaOutput = $('#pizzaOutput');
+  pizzaOutput.empty();
   const price = pizza.calculatePrice().toFixed(2);
   let pizzaHTML = `<p><strong>${pizza.size} Pizza</strong></p><ul class='toppingsList'>`;
   for (const topping of pizza.toppings) {
