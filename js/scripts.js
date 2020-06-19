@@ -21,7 +21,10 @@ Pizza.prototype.calculatePrice = function() {
       price += 12;
       break;
   }
-  
+  this.toppings.forEach(function(topping) {
+    price += .25;
+  })
+  return price;
 }
 
 //ui
