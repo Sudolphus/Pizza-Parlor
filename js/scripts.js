@@ -66,6 +66,7 @@ let pizza;
 
 function newPizza(size) {
   pizza = new Pizza(size);
+
   $('#toppings').show();
 }
 
@@ -115,6 +116,7 @@ function addPizzaToOrderDisplay(newPizza) {
   orderHTML += `<button class='btn btn-warning deleteFromOrder' id='delete${newPizza.ID}'>Remove This Pizza</button>`;
   orderOutput.append(orderHTML);
   $("#totalPrice").text(`$${order.totalPrice.toFixed(2)}`);
+  $("#resetOrder").show();
 }
 
 function deletePizza(id) {
@@ -123,6 +125,17 @@ function deletePizza(id) {
   pizzaToDelete.remove();
   $(`button#delete${id}`).remove();
   $("#totalPrice").text(`$${order.totalPrice.toFixed(2)}`);
+  if (order.pizzas.length === 0) {
+    $("#resetOrder").hide();
+  }
+}
+
+function resetOrder() {
+  $("#orderOutput").empty();
+  order = new Order();
+  $("#totalPrice").text('$0.00');
+  resetPizza();
+  $("#resetOrder").hide();
 }
 
 function attachPizzaButtons() {
@@ -158,5 +171,9 @@ $(document).ready(function() {
   $("#toppingsSubmit").click(function(event) {
     event.preventDefault();
     collectToppings();
+  })
+  $("#resetOrder").click(function(event) {
+    event.preventDefault();
+    resetOrder();
   })
 })

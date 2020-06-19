@@ -2,6 +2,6 @@
   list-style-type: none;
 }
 
-#toppings {
+#toppings, #resetOrder {
   display: none;
 }
