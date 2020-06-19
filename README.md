@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Pizza Parlor_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _An App for ordering Pizza, 06.19.2020_
 
 #### By _**Micheal Hansen**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_An app for the ordering of pizza. Demonstrates object-oriented javascript by allowing the _
 
 ## Specifications
 
