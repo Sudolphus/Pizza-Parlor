@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dummy Title</title>
+    <title>Sudo's Pizza Parlor</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.5.1.js"></script>
@@ -9,7 +9,21 @@
   </head>
   <body>
     <div class="container">
-      
+      <div class="page-header">
+        <h1>Sudo's Pizza Parlor</h1>
+        <p>Welcome to the Parlor</p>
+      </div>
+
+      <p>Start by choosing your size:</p>
+      <button class="btn btn-success" id='small'>Small</button>
+      <button class="btn btn-success" id="medium">Medium</button>
+      <button class="btn btn-success" id="large">Large</button>
+
+      <form id="toppings">
+        <div class='checkbox'>
+          <label><input type="checkbox" value="beef">Beef</label>
+        </div>
+      </form>
     </div>
   </body>
 </html>
