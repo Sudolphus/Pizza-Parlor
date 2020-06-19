@@ -1,35 +1,49 @@
-.toppingsList {
-  list-style-type: none;
+.background {
+  background-image: url('../img/pizza.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vw;
+  height: 100vw;
+  width: 100vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: green;
 }
 
-#toppings, #resetOrder {
-  display: none;
+.visualImpair {
+  background-image: none;
+  background-color: green;
+  color: orange;
+}
+
+#visual {
+  float: right;
 }
 
 .page-header {
   text-align: center;
-  color: orange;
 }
 
-.background {
-  background-color: green;
-  height: 100vw;
-  width: 100vw;
+.page-header > h1 {
+  text-shadow: 2px 2px;
+}
+
+.toppingsList {
+  list-style-type: none;
 }
 
 .sizeBox {
-  background-color: white;
+  background-color: inherit;
   border: 2px solid gold;
   text-align: center;
   padding-bottom: 5px;
 }
 
 #toppings {
-  background-color: white;
+  background-color: inherit;
   border: 2px solid gold;
   margin-top: 5px;
   padding-bottom: 5px;
   margin-bottom: 5px;
+  display: none;
 }
 
 
@@ -38,7 +52,7 @@
 }
 
 .pizzaBox {
-  background-color: white;
+  background-color: inherit;
   border: 2px solid gold;
   padding-left: 20px;
   padding-bottom: 5px;
@@ -55,8 +69,16 @@
 }
 
 .orderBox {
-  background-color: white;
+  background-color: inherit;
   border: 2px solid gold;
   padding-bottom: 5px;
   display: none;
+}
+
+#resetOrder {
+  display: none;
+}
+
+label:hover {
+  font-weight: bolder;
 }

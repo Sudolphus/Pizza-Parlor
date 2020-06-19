@@ -182,4 +182,13 @@ $(document).ready(function() {
     event.preventDefault();
     resetOrder();
   })
+  $("#visual").click(function(event) {
+    event.preventDefault();
+    const background = $("div.background");
+    if (background.hasClass("visualImpair")) {
+      background.removeClass("visualImpair");
+    } else {
+      background.addClass("visualImpair");
+    }
+  })
 })
