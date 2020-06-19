@@ -16,6 +16,20 @@ Order.prototype.addPizza = function(pizza) {
   this.totalPrice += pizza.calculatePrice();
 }
 
+Order.prototype.deletePizza = function(id) {
+  let pizzaToDelete;
+  for (const pizza of this.pizzas) {
+    if (pizza.ID === id) {
+      pizzaToDelete = pizza;
+      break;
+    }
+  }
+  this.totalPrice -= pizzaToDelete.calculatePrice();
+  this.pizzas = this.pizzas.filter(function(pizza) {
+    return pizza != pizzaToDelete;
+  })
+}
+
 function Pizza(size) {
   this.size = size;
   this.toppings = [];
@@ -97,7 +111,7 @@ function resetPizza() {
 function addPizzaToOrderDisplay(newPizza) {
   const orderOutput = $("#orderOutput");
   const pizzaHTML = buildPizzaHTML(newPizza);
-  const orderHTML = `<li>${pizzaHTML}</li>`;
+  let orderHTML = `<li>${pizzaHTML}</li>`;
   const price = `$${order.totalPrice.toFixed(2)}`;
   orderOutput.append(orderHTML);
   $("#totalPrice").text(price);

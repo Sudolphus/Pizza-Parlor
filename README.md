@@ -20,6 +20,10 @@ _An app for the ordering of pizza. Demonstrates object-oriented javascript by al
 | **Program allows user to confirm or delete their pizza** | User input: Clicks Add Toppings | Output: button with confirm or delete appears |
 | **Program assigns unique ID to each pizza if confirmed** | User input: Clicks confirm | Output: Pizza = {size = 'small', toppings: [Pepperoni], ID: 1} |
 | **Program adds Pizza to Order object if confirmed** | User input: Clicks confirm | Output: Order = {pizzas=[{size = 'small', toppings: [Pepperoni], ID: 1}] |
+| **Program resets Pizza and Pizza form if discarded** | User input: Clicks delete | Output: Pizza = {} |
+| **Program displays confirmed Pizzas and displays Price** | User input: Clicks confirm | Output: Your Order: Total Price: $8.25, Small Pizza with Pepperoni, price $8.25" |
+| **Program can delete pizzas from order** | User input: Clicks delete pizza | Output: Order = {pizzas = []} |
+| **Program updates order display when a pizza is deleted** | User input: Clicks delete pizza | Output: Your Order: Total Price: $0.00 |
 
 
 ## Setup/Installation Requirements
