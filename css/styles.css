@@ -5,3 +5,58 @@
 #toppings, #resetOrder {
   display: none;
 }
+
+.page-header {
+  text-align: center;
+  color: orange;
+}
+
+.background {
+  background-color: green;
+  height: 100vw;
+  width: 100vw;
+}
+
+.sizeBox {
+  background-color: white;
+  border: 2px solid gold;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#toppings {
+  background-color: white;
+  border: 2px solid gold;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+
+#toppings > .row > div > label, input {
+  text-align: left;
+}
+
+.pizzaBox {
+  background-color: white;
+  border: 2px solid gold;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  display: none;
+  margin-bottom: 5px;
+}
+
+.buttonGroup {
+  padding-top: 20px;
+}
+
+.buttonGroup > button {
+  margin: 10px;
+}
+
+.orderBox {
+  background-color: white;
+  border: 2px solid gold;
+  padding-bottom: 5px;
+  display: none;
+}

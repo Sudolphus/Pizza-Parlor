@@ -83,10 +83,13 @@ function buildPizzaHTML(newPizza) {
 function displayPizza() {
   const pizzaOutput = $('#pizzaOutput');
   pizzaOutput.empty();
-  let pizzaHTML = buildPizzaHTML(pizza);
-  pizzaHTML += `<button class="btn btn-info" id="confirmPizza">Add Pizza To Order</button>`
-  pizzaHTML += `<button class="btn btn-warning" id="deletePizza">Discard Pizza</button>`
+  let pizzaHTML = `<div class='row'><div class='col-md-6'><h3>Current Pizza</h3>`
+  pizzaHTML += buildPizzaHTML(pizza);
+  pizzaHTML += `</div><div class='col-md-6 buttonGroup'>`
+  pizzaHTML += `<button class="btn btn-info" id="confirmPizza">Add Pizza To Order</button><br>`
+  pizzaHTML += `<button class="btn btn-warning" id="deletePizza">Discard Pizza</button></div></div>`
   pizzaOutput.append(pizzaHTML);
+  $(".pizzaBox").show();
 }
 
 function collectToppings() {
@@ -107,6 +110,7 @@ function resetPizza() {
       $(this).prop('checked', false);
     })
     $("#toppings").hide();
+    $(".pizzaBox").hide();
 }
 
 function addPizzaToOrderDisplay(newPizza) {
@@ -117,6 +121,7 @@ function addPizzaToOrderDisplay(newPizza) {
   orderOutput.append(orderHTML);
   $("#totalPrice").text(`$${order.totalPrice.toFixed(2)}`);
   $("#resetOrder").show();
+  $(".orderBox").show();
 }
 
 function deletePizza(id) {
@@ -127,6 +132,7 @@ function deletePizza(id) {
   $("#totalPrice").text(`$${order.totalPrice.toFixed(2)}`);
   if (order.pizzas.length === 0) {
     $("#resetOrder").hide();
+    $(".orderBox").hide();
   }
 }
 
