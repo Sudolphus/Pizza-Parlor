@@ -6,14 +6,16 @@
 
 ## Description
 
-_An app for the ordering of pizza. Demonstrates object-oriented javascript by allowing the _
+_An app for the ordering of pizza. Demonstrates object-oriented javascript by allowing the ordering of pizza and keeping track of topics._
 
 ## Specifications
 
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Homepage** | User accesses localhost:5004 | Homepage with user input form |
-| **Program Gathers User Input** | User input: "10" | Output: "10" |
+| **Program creates a 'Pizza' object** | User input: Clicks "New Pizza" | Output: Pizza object created |
+| **User can add Toppings to the Pizza** | User input: Checks 'Pepperoni' | Output: Pizza = {toppings: [Pepperoni]} |
+| **Program can calculate price when Pizza is confirmed** | User input: Checks confirm | Output: Pizza = {toppings: [Pepperoni], price: $12} |
+| **Program shows user their order and their price** | User input: Checks confirm | Output: 'Pizza with pepperoni, price: $12' |
 
 
 ## Setup/Installation Requirements
@@ -28,8 +30,8 @@ Open by downloading:
 
 Open via Bash/GitBash:
 1. Clone this repository onto your computer:
-`git clone {PUT_REPO_HERE}`
-2. Navigate into the `{NAME_OF_DIRECTORY}` directory in Visual Studio Code or preferred text editor
+`git clone https://github.com/Sudolphus/Pizza-Parlor`
+2. Navigate into the `Pizza-Parlor` directory in Visual Studio Code or preferred text editor
 `code .`
 3. Open index.html in Chrome or preferred browser:
 `open index.html`
@@ -39,7 +41,7 @@ Open via Bash/GitBash:
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_None known_
 
 ## Support and contact details
 
