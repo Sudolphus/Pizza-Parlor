@@ -11,13 +11,13 @@ Pizza.prototype.addToppings = function(topping) {
 Pizza.prototype.calculatePrice = function() {
   let price = 0;
   switch (this.size) {
-    case ('small'):
+    case ('Small'):
       price += 8;
       break;
-    case ('medium'):
+    case ('Medium'):
       price += 10;
       break;
-    case ('large'):
+    case ('Large'):
       price += 12;
       break;
   }
@@ -35,6 +35,17 @@ function newPizza(size) {
   $('#toppings').show();
 }
 
+function displayPizza() {
+  const pizzaOutput = $('#pizzaOutput');
+  const price = pizza.calculatePrice().toFixed(2);
+  let pizzaHTML = `<p><strong>${pizza.size} Pizza</strong></p><ul class='toppingsList'>`;
+  for (const topping of pizza.toppings) {
+    pizzaHTML += `<li><em>${topping}</em></li>`;
+  }
+  pizzaHTML += `</ul><p><strong>Price: $${price}</strong></p>`;
+  pizzaOutput.append(pizzaHTML);
+}
+
 function collectToppings() {
   const toppings = [];
   $('input:checkbox[name=topping]:checked').each(function() {
@@ -43,20 +54,21 @@ function collectToppings() {
   toppings.forEach(function(topping) {
     pizza.addToppings(topping);
   })
+  displayPizza();
 }
 
 $(document).ready(function() {
   $("#small").click(function(event) {
     event.preventDefault();
-    newPizza('small');
+    newPizza('Small');
   })
   $("#medium").click(function(event) {
     event.preventDefault();
-    newPizza('medium');
+    newPizza('Medium');
   })
   $("#large").click(function(event) {
     event.preventDefault();
-    newPizza('large');
+    newPizza('Large');
   })
   $("#toppingsSubmit").click(function(event) {
     event.preventDefault();
