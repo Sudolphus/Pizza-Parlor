@@ -98,7 +98,9 @@ function addPizzaToOrderDisplay(newPizza) {
   const orderOutput = $("#orderOutput");
   const pizzaHTML = buildPizzaHTML(newPizza);
   const orderHTML = `<li>${pizzaHTML}</li>`;
+  const price = `$${order.totalPrice.toFixed(2)}`;
   orderOutput.append(orderHTML);
+  $("#totalPrice").text(price);
 }
 
 function attachPizzaButtons() {
