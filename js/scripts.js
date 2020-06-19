@@ -28,11 +28,21 @@ Pizza.prototype.calculatePrice = function() {
 }
 
 //ui
-let pizza = new Pizza();
+let pizza;
 
 function newPizza(size) {
   pizza = new Pizza(size);
   $('#toppings').show();
+}
+
+function collectToppings() {
+  const toppings = [];
+  $('input:checkbox[name=topping]:checked').each(function() {
+    toppings.push($(this).val());
+  })
+  toppings.forEach(function(topping) {
+    pizza.addToppings(topping);
+  })
 }
 
 $(document).ready(function() {
@@ -48,7 +58,8 @@ $(document).ready(function() {
     event.preventDefault();
     newPizza('large');
   })
-  $("#submit").click(function(event) {
+  $("#toppingsSubmit").click(function(event) {
     event.preventDefault();
+    collectToppings();
   })
 })
